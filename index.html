@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="theme-color" content="#172d9b"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mô phỏng thông báo số dư</title>
+<style>
+:root{--ink:#766e69;--glass:rgba(255,250,247,.83)}*{box-sizing:border-box}body{margin:0;min-height:100svh;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#211b1a;background:#e8ddda;display:grid;place-items:center;padding:18px}.phone{position:relative;width:min(100%,430px);height:min(900px,calc(100svh - 36px));min-height:700px;overflow:hidden;border-radius:38px;background:linear-gradient(180deg,#fbf1ec 0%,#f1e7e4 47%,#dfd5d2 100%);box-shadow:0 20px 70px #473b3730}.wallpaper{position:absolute;inset:0;overflow:hidden;background:radial-gradient(ellipse at 50% 46%,#fff8f3 0%,transparent 53%)}.date{position:absolute;top:25px;width:100%;text-align:center;color:#756c67;font-size:clamp(17px,4.8vw,24px);font-weight:600;letter-spacing:-.5px}.clock{position:absolute;top:65px;left:0;width:100%;text-align:center;font-size:clamp(120px,39vw,190px);font-weight:300;line-height:1;color:#8c8580;letter-spacing:-9px;opacity:.78}.bouquet{position:absolute;top:35%;left:50%;transform:translateX(-50%);width:290px;height:340px;opacity:.88}.stem{position:absolute;bottom:22px;left:50%;width:5px;height:230px;background:linear-gradient(90deg,#315b3d,#72966b);border-radius:9px;transform-origin:bottom}.stem:nth-child(1){transform:rotate(-29deg)}.stem:nth-child(2){transform:rotate(-15deg)}.stem:nth-child(3){transform:rotate(-5deg)}.stem:nth-child(4){transform:rotate(9deg)}.stem:nth-child(5){transform:rotate(22deg)}.flower{position:absolute;width:62px;height:62px;border-radius:50%;background:radial-gradient(circle at center,#f7bd56 0 13%,transparent 14%),conic-gradient(#d96bc8 0 12%,transparent 12% 18%,#d96bc8 18% 30%,transparent 30% 36%,#d96bc8 36% 48%,transparent 48% 54%,#d96bc8 54% 66%,transparent 66% 72%,#d96bc8 72% 84%,transparent 84% 90%,#d96bc8 90%);filter:drop-shadow(0 2px 2px #8c6a6a30)}.f1{top:25px;left:42px}.f2{top:4px;left:125px;transform:scale(1.1)}.f3{top:43px;right:26px;transform:scale(.9)}.f4{top:105px;left:5px;transform:scale(.8)}.f5{top:105px;left:112px;transform:scale(.82)}.f6{top:100px;right:12px;transform:scale(.75)}.bow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);font-size:82px;color:#fff;text-shadow:0 2px 3px #aaa;opacity:.8}.demoTag{position:absolute;top:61%;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;letter-spacing:1px;color:#7c4039;background:#fff4e9;border:1px solid #d5a79c;padding:6px 10px;border-radius:99px;white-space:nowrap;z-index:2}.notification{position:absolute;top:66%;left:16px;right:16px;background:var(--glass);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid #ffffffb8;border-radius:27px;padding:17px 17px 19px;box-shadow:0 8px 25px #55443e12}.notifTop{display:flex;align-items:center;gap:12px;margin-bottom:12px}.appIcon{width:45px;height:45px;border-radius:13px;background:linear-gradient(145deg,#3049d7,#172d9b);display:grid;place-items:center;color:white;font-size:25px;font-weight:800;flex:none}.notifHeading{font-weight:750;font-size:17px;flex:1}.now{font-size:13px;color:#8a817d}.line{font-size:16px;line-height:1.55;overflow-wrap:anywhere}.warning{margin-top:12px;font-size:10px;font-weight:800;letter-spacing:.7px;color:#914c43;text-align:center}.bottom{position:absolute;bottom:20px;left:0;right:0;display:flex;justify-content:space-around;color:#201b1a;font-size:25px}.bottom span{width:58px;height:58px;border-radius:50%;background:#fff9f5;display:grid;place-items:center}.controls{width:min(100%,430px);background:white;border-radius:20px;padding:18px;margin-top:14px;box-shadow:0 8px 28px #00000010}.controls h2{font-size:17px;margin:0 0 12px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.fields label{font-size:12px;color:#625b57;display:grid;gap:5px}.fields input{width:100%;min-width:0;border:1px solid #ddd4d0;border-radius:10px;padding:10px;font:inherit;font-size:14px}.fields .wide{grid-column:1/-1}.hint{font-size:11px;color:#807773;line-height:1.45;margin:12px 0 0}@media(max-height:760px){.phone{height:740px}.notification{top:64%}.demoTag{top:59%}}
+</style>
+</head>
+<body>
+<div><main class="phone" aria-label="Màn hình khóa mô phỏng">
+ <div class="wallpaper"></div>
+ <div class="date" id="dateText">Thứ Hai, 2 tháng 3</div>
+ <div class="clock" id="clockText">22:50</div>
+ <div class="bouquet" aria-hidden="true"><i class="stem"></i><i class="stem"></i><i class="stem"></i><i class="stem"></i><i class="stem"></i><i class="flower f1"></i><i class="flower f2"></i><i class="flower f3"></i><i class="flower f4"></i><i class="flower f5"></i><i class="flower f6"></i><div class="bow">🎀</div></div>
+ <div class="demoTag">MÔ PHỎNG • KHÔNG PHẢI GIAO DỊCH THẬT</div>
+ <section class="notification">
+  <div class="notifTop"><div class="appIcon">✳</div><div class="notifHeading">Thông báo biến động số dư</div><div class="now">bây giờ</div></div>
+  <div class="line" id="accountLine">TK 03xxx526 | GD: +5000000 VND</div>
+  <div class="line" id="detailLine">02/03/26 22:49 | SD: 20000000 VND | ND: XocDia88</div>
+  <div class="warning">BẢN DEMO — SỐ LIỆU MINH HỌA</div>
+ </section>
+ <div class="bottom"><span>◉</span><span>◎</span></div>
+</main>
+<section class="controls">
+ <h2>Tùy chỉnh nội dung mô phỏng</h2>
+ <div class="fields">
+  <label>Số tài khoản<input id="account" value="03xxx526" maxlength="24"></label>
+  <label>Số tiền giao dịch (VND)<input id="amount" value="5000000" inputmode="numeric"></label>
+  <label>Số dư minh họa (VND)<input id="balance" value="20000000" inputmode="numeric"></label>
+  <label>Giờ hiển thị<input id="time" value="22:49" placeholder="22:49"></label>
+  <label class="wide">Nội dung<input id="note" value="XocDia88" maxlength="50"></label>
+ </div>
+ <button id="notifyBtn" style="width:100%;margin-top:14px;border:0;border-radius:12px;padding:14px;background:#172d9b;color:white;font-weight:700;font-size:15px">Gửi thông báo thử đến iPhone</button>
+ <p class="hint">BẢN DEMO. Không kết nối ngân hàng và không xác nhận giao dịch. Trên iPhone, hãy thêm trang vào Màn hình chính rồi cấp quyền thông báo. Muốn nhận khi ứng dụng đã đóng cần máy chủ Push.</p>
+</section></div>
+<script>
+const $=id=>document.getElementById(id);function update(){const a=$('account').value||'••••';const amount=$('amount').value.replace(/[^0-9-]/g,'')||'0';const balance=$('balance').value.replace(/[^0-9-]/g,'')||'0';$('accountLine').textContent=`TK ${a} | GD: +${amount} VND`;$('detailLine').textContent=`02/03/26 ${$('time').value||'22:49'} | SD: ${balance} VND | ND: ${$('note').value||'—'}`}
+document.querySelectorAll('.controls input').forEach(el=>el.addEventListener('input',update));
+if ('serviceWorker' in navigator) window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+$('notifyBtn').addEventListener('click',async()=>{
+  if(!('Notification' in window)){alert('Trình duyệt này chưa hỗ trợ thông báo. Hãy mở ứng dụng đã thêm vào Màn hình chính bằng Safari.');return;}
+  let permission=Notification.permission;
+  if(permission==='default') permission=await Notification.requestPermission();
+  if(permission!=='granted'){alert('Bạn chưa cấp quyền thông báo. Hãy bật quyền trong Cài đặt iPhone.');return;}
+  try{
+    const reg=await navigator.serviceWorker.ready;
+    const a=$('account').value||'••••';
+    const amount=$('amount').value.replace(/[^0-9-]/g,'')||'0';
+    const balance=$('balance').value.replace(/[^0-9-]/g,'')||'0';
+    const note=$('note').value||'—';
+    await reg.showNotification('DEMO • Biến động số dư', {
+      body:`TK ${a} | GD: +${amount} VND\\nSD: ${balance} VND | ND: ${note}`,
+      icon:'./icon-192.png',badge:'./icon-192.png',tag:'demo-balance',renotify:true
+    });
+    alert('Đã yêu cầu gửi thông báo thử. Hãy kiểm tra màn hình khóa/Trung tâm thông báo.');
+  }catch(e){alert('Không gửi được thông báo trên trình duyệt này: '+e.message);}
+});
+</script>
+</body></html>
